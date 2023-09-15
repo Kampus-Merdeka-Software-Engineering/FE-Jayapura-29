@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:ital,wght@0,300;0,700;1,300&family=Poppins:wght@100;200;300;400;500;600;700&family=Quicksand&display=swap');
+
+* {
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.logo img{
+    width: 50px;
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+.text{
+    color: #E9A827;
+    font-weight: bold;
+    float: inline-start;
+}
+
+.text span{
+    color: #4682A9;
+    float: left;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    color: #000000;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: #fff;
+    background: #4682A9;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.kolom {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kolom .deskripsi{
+    font-weight: bold;
+    color:#000000;
+}
+
+.kolom .deskripsi p{
+    
+    font-size: 20px;
+    font-weight: bold;
+    color:#4682A9;
+}
+
+a.tbl-biru {
+    background: #4682A9;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.btn-tbl-biru {
+    border-style: solid;
+    border-color: #4682A9;
+    border-radius: 20px;
+    margin-top: 20 px;
+    padding: 10px 15px 10px 15px;
+    color: #4682A9;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.btn-tbl-biru:hover {
+    color: #fff;
+    background: #4682A9;
+    
+}
+
+a.tbl-biru:hover {
+    color: #000000;
+    background: #E9A827;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991.98px){
+    .wrapper {
+        width: 90%;
+    }
+}
