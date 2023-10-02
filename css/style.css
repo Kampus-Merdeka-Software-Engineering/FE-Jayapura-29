@@ -571,56 +571,41 @@ form .button{
     z-index: -1;
 }
 
-/* blogs */
+/* blog start */
 
-.icons-container{
+.blog {
+    margin-top: 200px;
+  }
+
+.blog .box-container{
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
 }
 
-.icons-container .icons{
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    text-align: center;
-    padding: 2.5rem;
+.blog .box-container .box{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
-.icons-container .icons i{
-    font-size: 4.5rem;
-    color: var(--blue);
-    padding-bottom: .7rem;
+.blog .box-container .box img{
+    width: 300px;
+    
 }
 
-.icons-container .icons h3{
-    font-size: 4.5rem;
-    color: var(--black);
-    padding-bottom: .5rem 0;
-    text-shadow: var(--text-shadow);
-}
-
-.icons-container .icons p{
-    font-size: 1.7rem;
+.blog .box-container .box h3{
+    font-size: 1.5rem;
     color: var(--light-color);
+    padding: 1rem 0;
 }
 
+/* blog end */
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* our team start */
 .blogs .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -687,10 +672,10 @@ form .button{
     padding: 1rem 0;
 }
 
-
-
+/* our team end */
 
 .footer {
+    padding: 50px;
     margin-top: 200px;
     box-shadow: 0px -10px #888888;
     background-color: #1450a3;
@@ -735,7 +720,7 @@ form .button{
     padding-top: 2rem;
     margin-top: 2rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--light-color);
     border-top: .1rem solid rgba(0, 0, 0, .1);
 }
@@ -748,7 +733,6 @@ form .button{
     background-color: #1450a3;
     box-shadow: 0px -10px #8888;
 }
-
 
 
 /* media queries */
@@ -803,7 +787,6 @@ form .button{
     }
 
 }
-
 
 @media (max-width:450px){
 
