@@ -531,7 +531,7 @@ form .button {
 
 /* blog start */
 
-.blog {
+/* .blog {
   margin-top: 200px;
 }
 
@@ -558,8 +558,45 @@ form .button {
   font-size: 1.5rem;
   color: var(--light-color);
   padding: 1rem 0;
+} */
+
+.blog {
+  margin-top: 200px;
 }
 
+.blog .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+}
+
+.blog .box-container .box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: auto; /* Adjusted width */
+  display: inline-block; /* Adjusted display */
+}
+
+.blog .box-container .box img {
+  max-width: 100%; /* Ensure the image doesn't exceed the width of the .box */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.blog .box-container .box h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.blog .box-container .box p {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
 /* blog end */
 
 /* our team start */
