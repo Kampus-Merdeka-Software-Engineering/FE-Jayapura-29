@@ -278,6 +278,13 @@ form .button {
   gap: 2rem;
 }
 
+.booking .content p {
+  font-size: 1.7rem;
+  color: var(--light-color);
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
 .booking .row .image {
   flex: 1 1 45rem;
 }
@@ -388,6 +395,32 @@ form .button {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.book .row .content {
+  max-width: 40%;
+  flex: 1 1 45rem;
+}
+
+.book .row .content .heading {
+  text-align: start;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+}
+
+.book .row .content .heading span {
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.book .row .content p {
+  font-size: 1.7rem;
+  color: var(--light-color);
+  line-height: 1.8;
+  padding: 1rem 0;
 }
 
 .book .row .image {
