@@ -232,6 +232,7 @@ form .button {
   color: var(--light-color);
   font-size: 1.4rem;
   line-height: 2;
+  text-align: justify;
 }
 
 /* about */
