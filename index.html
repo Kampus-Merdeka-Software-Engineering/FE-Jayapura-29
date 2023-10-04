@@ -14,10 +14,12 @@
     <!-- custom css file link -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- add animation on scroll library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
     <!-- custom js file link -->
-    
     <script src="js/scroll-to-section.js"></script>
-    <!-- <script src="js/navbar.js"></script> -->
+    <script src="js/navbar.js"></script>
     <script src="js/script.js"></script>
 
   </head>
@@ -27,7 +29,7 @@
     <!-- header section ends -->
 
     <!-- home section starts -->
-    <section class="home" id="home">
+    <section class="home" id="home" data-aos="fade-up">
       <div class="content">
         <h3>Virtual Healthcare For You</h3>
         <p>
@@ -46,7 +48,7 @@
     <!-- home section ends -->
 
     <!-- services section starts -->
-    <section class="services" id="services">
+    <section class="services" id="services" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
       <h1 class="heading">our <span>services</span></h1>
       <p>
         We provide to you the best choiches for you. Adjust it to your health
@@ -111,7 +113,7 @@
 
     <!-- about section starts -->
 
-    <section class="about" id="about">
+    <section class="about" id="about" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="200">
       <div class="row">
         <div class="image">
           <img src="public/img/gambar2.png" alt="" />
@@ -128,7 +130,7 @@
     <!-- about section ends -->
 
     <!-- doctors section starts -->
-    <section class="doctors" id="doctors">
+    <section class="doctors" id="doctors" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200" >
       <h1 class="heading">our <span>psychologies</span></h1>
       <p>
         Free consultation with our trusted psychologs and get the best
@@ -178,14 +180,14 @@
     <!-- booking section starts -->
     <section class="book" id="book">
       <div class="row">
-        <div class="content">
+        <div class="content" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="200">
             <h1 class="heading">Book <span>Now</span></h1>
             <p>Create Your Account And Immediately Make An Appointment With Our Trusted Psychologist, and let John Smith, David Johnson, and Michael Williams share their experiences with you!</p>
             <a href="appointment.html" class="btn">
                 consult today <span class="fas fa-chevron-right"></span>
               </a>
         </div>
-        <div class="image">
+        <div class="image"  data-aos="fade-left" data-aos-duration="3000" data-aos-delay="200">
           <img
             src="https://img.freepik.com/free-vector/smart-pill-boxes-abstract-concept-illustration_335657-3864.jpg?size=626&ext=jpg&ga=GA1.2.781077075.1679312414&semt=ais"
             alt=""
@@ -309,5 +311,11 @@
     <div id="footer-container"></div>
 
     <!-- footer section ends -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
   </body>
 </html>

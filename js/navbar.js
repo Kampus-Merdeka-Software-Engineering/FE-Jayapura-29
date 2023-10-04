@@ -1,19 +1,30 @@
-// navbar.js
-
-// // get the navbar
 // document.addEventListener("DOMContentLoaded", function () {
-//   fetch("navbar.html")
-//     .then((response) => response.text())
-//     .then((navbarHTML) => {
-//       document.getElementById("navbar-container").innerHTML = navbarHTML;
+//   const menuBtn = document.getElementById("menu-btn");
+//   const navbar = document.querySelector(".navbar");
+
+//   if (menuBtn && navbar) {
+//     // Add a click event listener to the menu button
+//     menuBtn.addEventListener("click", function () {
+//       navbar.classList.toggle("active");
 //     });
+//   }
 // });
 
-// // get the footer
-// document.addEventListener("DOMContentLoaded", function () {
-//   fetch("footer.html")
-//     .then((response) => response.text())
-//     .then((navbarHTML) => {
-//       document.getElementById("footer-container").innerHTML = navbarHTML;
-//     });
-// });
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+// function myFunction() {
+//   var x = document.getElementById("myTopnav");
+//   if (x.className === "topnav") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "topnav";
+//   }
+// }
+
+// function myFunction() {
+//   var x = document.getElementById("myTopnav");
+//   if (x.className === "header") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "header";
+//   }
+// }

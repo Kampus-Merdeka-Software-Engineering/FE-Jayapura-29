@@ -90,6 +90,8 @@ section:nth-child(even) {
   flex-wrap: wrap;
   gap: 1.5rem;
   padding-top: 10rem;
+  max-height: 100%;
+  overflow: auto;
 }
 
 .home .image {
