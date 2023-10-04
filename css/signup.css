@@ -46,6 +46,7 @@ h2#logo {
 
 .container {
   display: flex;
+  margin-top: 15vh;
 }
 
 .form_container {
