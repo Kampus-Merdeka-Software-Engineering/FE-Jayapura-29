@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/style/appointment.css" />
+    <link rel="stylesheet" href="/public/style/navbar.css" />
+
+    <title>Appointment</title>
+  </head>
+  <body>
+    <div id="appointment-container">
+      <!--  -->
+      <div id="navbar-container"></div>
+      <!--  -->
+      <div class="book_container">
+        <p><a href="/index2">Kembali</a></p>
+        <h1>Appointment</h1>
+        <p>Selamat datang, <%= nama_pendek %>. Silahkan lakukan appointment.</p>
+        <form action="/appointment" method="POST">
+          <div class="isi" style="display: none">
+            <label for="id_pasien">ID Pasien:</label>
+            <input
+              type="text"
+              name="id_pasien"
+              id="id_pasien"
+              value="<%= id_pasien %>"
+              readonly />
+          </div>
+
+          <div class="input_field">
+            <label for="nama_pasien">Nama:</label>
+            <input
+              type="text"
+              name="nama_pasien"
+              id="nama_pasien"
+              value="<%= nama_pasien %>"
+              readonly
+              class="input" />
+          </div>
+
+          <div class="input_field">
+            <label for="email_pasien">Email</label>
+            <input
+              type="text"
+              name="email_pasien"
+              id="email_pasien"
+              value="<%= email_pasien %>"
+              readonly
+              class="input" />
+          </div>
+
+          <div class="input_field">
+            <label for="nama_psikolog">Psycholog</label>
+            <select name="nama_psikolog" id="nama_psikolog">
+              <%= psikologOptions %>
+            </select>
+          </div>
+
+          <div class="input_field">
+            <label for="tanggal">Date</label>
+            <input
+              type="date"
+              name="tanggal"
+              id="tanggal"
+              required
+              class="input" />
+          </div>
+
+          <div class="input_field">
+            <label>Time</label>
+            <input type="time" name="waktu" id="waktu" required class="input" />
+          </div>
+
+          <div class="input_field">
+            <label for="keluhan">Complaint</label>
+            <textarea
+              name="keluhan"
+              id="keluhan"
+              required
+              class="input"
+              cols="30"
+              rows="10"
+              placeholder="Your Complaint"
+              style="height: 100px"></textarea>
+          </div>
+          <input type="submit" class="btn_submit" value="Buat Appointment" />
+        </form>
+      </div>
+    </div>
+
+    <script src="/public/script/script.js"></script>
+    <script src="/public/script/main_get.js"></script>
+    <script src="/public/script/main_post.js"></script>
+
+    <script>
+      // Fungsi untuk memeriksa apakah pengguna sudah login atau belum
+      function checkLoginStatus() {
+        fetch("/check-login-status") // Ganti dengan endpoint yang sesuai untuk memeriksa status login
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.isLoggedIn) {
+              // Pengguna sudah login, load navbar sesudah login
+              fetch("/navbar-after-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            } else {
+              // Pengguna belum login, load navbar sebelum login
+              fetch("/navbar-before-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            }
+          });
+      }
+
+      // Panggil fungsi checkLoginStatus saat halaman dimuat
+      window.onload = checkLoginStatus();
+    </script>
+  </body>
+</html>

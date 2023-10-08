@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/public/style/profile.css" />
+    <link rel="stylesheet" href="/public/style/navbar.css" />
+  </head>
+  <body>
+    <div id="profile-container">
+      <!-- Header -->
+      <div id="navbar-container"></div>
+
+      <!-- -------------------------------- -->
+      <div class="container_profile">
+        <p><a href="/index2" class="kembali">Kembali</a></p>
+        <div class="baris_satu">
+          <div class="card1">
+            <img
+              src="data:image/jpeg;base64, <%= profileData.foto_pasien %>"
+              alt="Foto Profil"
+              class="profile" />
+            <p><%= profileData.nama_pasien %></p>
+            <p>ID: <%= profileData.id_pasien %></p>
+            <a href="/edit_profile">Edit Profil</a>
+          </div>
+
+          <div class="card2">
+            <div class="pembayaran">
+              <h4>Status Pembayaran</h4>
+              <div class="isi_pembayaran">
+                <p id="jumlah-bayar">
+                  Jumlah Bayar: <%= profileData.jumlah_bayar %>
+                </p>
+                <hr />
+                <p id="status-bayar">
+                  Status Bayar: <%= profileData.status_bayar %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="baris_dua">
+          <div class="card3">
+            <div class="biodata">
+              <p><%= profileData.nama_pasien %></p>
+              <hr />
+              <p><%= profileData.email_pasien %></p>
+              <hr />
+              <p><%= profileData.gender %></p>
+              <hr />
+              <p><%= profileData.nomor_ponsel %></p>
+              <hr />
+              <p><%= profileData.alamat %></p>
+            </div>
+          </div>
+
+          <div class="card4">
+            <div class="jadwal_konsultasi">
+              <h4>Jadwal Konsultasi</h4>
+              <div class="isi_jadwal">
+                <div>
+                  <p id="tanggal-appointment">
+                    <%= profileData.tanggal_appointment %>
+                  </p>
+                </div>
+                <br />
+                <br />
+                <div>
+                  <p id="waktu-appointment">
+                    <%= profileData.waktu_appointment %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script/script.js"></script>
+    <script src="/script/main_get.js"></script>
+    <script src="/script/main_post.js"></script>
+    <script>
+      // Fungsi untuk memeriksa apakah pengguna sudah login atau belum
+      function checkLoginStatus() {
+        fetch("/check-login-status") // Ganti dengan endpoint yang sesuai untuk memeriksa status login
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.isLoggedIn) {
+              // Pengguna sudah login, load navbar sesudah login
+              fetch("/navbar-after-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            } else {
+              // Pengguna belum login, load navbar sebelum login
+              fetch("/navbar-before-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            }
+          });
+      }
+
+      // Panggil fungsi checkLoginStatus saat halaman dimuat
+      window.onload = checkLoginStatus();
+    </script>
+  </body>
+</html>
