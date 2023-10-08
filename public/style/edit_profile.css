@@ -30,18 +30,11 @@ html {
   color: #4682a9;
 }
 
-#background {
-  margin-right: 15vw;
-  margin-left: 15vw;
-  text-align: end;
-  position: relative;
-  margin-top: 5vw;
-}
-
 .container_profile {
   display: flex;
   margin: auto;
   justify-content: center;
+  margin-top: 15vh;
 }
 
 .card1 {
@@ -134,6 +127,8 @@ button#simpan {
   font-weight: 400;
   box-shadow: 1px 1px 5px #777;
   cursor: pointer;
+  position: absolute;
+  right: 14vw;
 }
 
 a.kembali {
@@ -144,8 +139,8 @@ a.kembali {
   font-weight: 400;
   box-shadow: 1px 1px 5px #777;
   cursor: pointer;
-  margin-right: 65vw;
-  margin-bottom: 100px;
+  position: absolute;
+  top: 15vh;
 }
 /* -------------------------- */
 
