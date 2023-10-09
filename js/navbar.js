@@ -28,3 +28,17 @@
 //     x.className = "header";
 //   }
 // }
+// frontend.js
+
+// frontend.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get a reference to the "Login" button in your navigation bar
+  const loginButton = document.querySelector(".login");
+
+  // Add a click event listener to the "Login" button
+  loginButton.addEventListener("click", () => {
+    // Navigate to the login page
+    window.location.href = "/login.html"; // Adjust the path as needed
+  });
+});
