@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         // Successful login
         alert(data.message); // You can replace this with your desired behavior
-        window.location.href = "/index.html"; // Redirect to the desired page after login
+        // window.location.href = "/index.html"; // Redirect to the desired page after login
       } else {
         // Login failed
         alert(data.error); // You can display an error message to the user
