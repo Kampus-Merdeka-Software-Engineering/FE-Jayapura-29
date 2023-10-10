@@ -428,9 +428,11 @@
     <script>
       // Fungsi untuk memeriksa apakah pengguna sudah login atau belum
       function checkLoginStatus() {
+        console.log("fetching");
         fetch("https://be-jayapura-29-test.up.railway.app/check-login-status") // Ganti dengan endpoint yang sesuai untuk memeriksa status login
           .then((response) => response.json())
           .then((data) => {
+            console.log(data.isLoggedIn);
             if (data.isLoggedIn) {
               // Pengguna sudah login, load navbar sesudah login
               fetch(
