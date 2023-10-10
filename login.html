@@ -8,11 +8,6 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Font -->
     <link
       rel="stylesheet"
@@ -20,15 +15,13 @@
     />
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="css/login.css" /> -->
-    <!-- <link rel="stylesheet" href="css/navbar1.css" /> -->
-    <script src="js/scroll-to-section.js"></script>
-    <!-- <script src="js/navbar.js"></script> -->
-    <!-- <script src="js/script.js"></script> -->
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
   <body>
+    <!-- header -->
     <div id="navbar-container"></div>
-
+    <!--  -->
     <div class="login">
       <h1>LOGIN</h1>
       <p>Please Enter Your Email and Password</p>
@@ -44,8 +37,41 @@
       </form>
     </div>
     <p class="para-2">
-      Dont have an account? <a href="/signup">Sign up </a>first
+      Dont have an account? <a href="/signup.html">Sign Up </a>first
     </p>
+
+    <script src="js/script.js"></script>
     <script src="js/login.js"></script>
+    <!-- <script src="js/main_get.js"></script> -->
+    <!-- <script src="js/main_post.js"></script> -->
+    <script>
+      // Fungsi untuk memeriksa apakah pengguna sudah login atau belum
+      function checkLoginStatus() {
+        fetch("/check-login-status") // Ganti dengan endpoint yang sesuai untuk memeriksa status login
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.isLoggedIn) {
+              // Pengguna sudah login, load navbar sesudah login
+              fetch("/navbar-after-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            } else {
+              // Pengguna belum login, load navbar sebelum login
+              fetch("/navbar-before-login")
+                .then((response) => response.text())
+                .then((navbarHTML) => {
+                  document.getElementById("navbar-container").innerHTML =
+                    navbarHTML;
+                });
+            }
+          });
+      }
+
+      // Panggil fungsi checkLoginStatus saat halaman dimuat
+      window.onload = checkLoginStatus();
+    </script>
   </body>
 </html>

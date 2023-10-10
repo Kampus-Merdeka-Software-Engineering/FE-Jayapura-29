@@ -29,6 +29,10 @@ html {
 }
 
 /* our-team */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
+}
 
 .our-team {
   margin-top: 10rem;
@@ -74,6 +78,16 @@ html {
   gap: 20px;
 }
 
+/* .container-team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow-x: auto; 
+  padding: 0 10px; 
+  max-width: 100%; 
+  white-space: nowrap; 
+} */
+
 .team-card {
   border: 3px solid #1450a3; /* Garis pinggir tebal */
   border-radius: 20px;
@@ -84,6 +98,12 @@ html {
   align-items: center;
   max-width: 400px;
   background-color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.1);
 }
 
 .team-card img {
@@ -106,4 +126,14 @@ html {
   height: 150px;
   border-left: 3px solid #1450a3; /* Garis pembatas tebal */
   margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .container-team {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Change to a single column layout for smaller screens */
+    padding: 0 20px; /* Add some padding to the sides for better mobile view */
+  }
 }
